@@ -1,10 +1,16 @@
 body {
+  background-color: #dcdcdc;
   text-align: center;
   font-family: "Arial";
 }
 
 h2 {
   font-size: 2rem;
+}
+
+img {
+  width: 300px;
+  height: 300px;
 }
 
 .input {
