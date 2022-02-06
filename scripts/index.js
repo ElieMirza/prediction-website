@@ -8,6 +8,7 @@ let nationality_para = document.getElementById("nationality");
 
 fetchImage();
 
+// logic to start and resert query on every submit
 document.getElementById("button").onclick = function() {
   if (!game_started) {
     game_started = true;
@@ -19,6 +20,7 @@ document.getElementById("button").onclick = function() {
   }
 }
 
+// Fetches gender and age
 async function fetchGenderAge(link, userName, trait) {
   await fetch(link + userName)
     .then(response => response.json())
@@ -31,6 +33,7 @@ async function fetchGenderAge(link, userName, trait) {
     })
 }
 
+// Fetches nationality and calls print nationality function
 async function fetchNationality(link, userName) {
   await fetch(link + userName)
     .then(response => response.json())
@@ -38,6 +41,8 @@ async function fetchNationality(link, userName) {
   printNationality();
 }
 
+// logic to print nationality/ies in a way that when more than one is available
+// they get shown separated by a comma
 function printNationality() {
   let span = document.createElement('span');
 
